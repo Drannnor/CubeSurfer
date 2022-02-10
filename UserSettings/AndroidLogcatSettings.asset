@@ -3,35 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "def4222",
         "name": "com.DefaultCompany.CubeSurfer",
-        "processId": 5625,
+        "processId": 4603,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "def4222",
-            "name": "com.teslacoilsw.launcher",
-            "processId": 14155,
-            "exited": false
-        },
-        {
-            "deviceId": "def4222",
-            "name": "com.DefaultCompany.CubeSurfer",
-            "processId": 22743,
-            "exited": true
-        },
-        {
-            "deviceId": "def4222",
-            "name": "com.DefaultCompany.CubeSurfer",
-            "processId": 24748,
-            "exited": true
-        },
-        {
-            "deviceId": "def4222",
-            "name": "com.DefaultCompany.CubeSurfer",
-            "processId": 28575,
-            "exited": true
-        },
         {
             "deviceId": "def4222",
             "name": "com.DefaultCompany.CubeSurfer",
@@ -42,18 +18,36 @@
             "deviceId": "def4222",
             "name": "com.DefaultCompany.CubeSurfer",
             "processId": 29931,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "def4222",
             "name": "com.DefaultCompany.CubeSurfer",
             "processId": 3051,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "def4222",
             "name": "com.DefaultCompany.CubeSurfer",
             "processId": 5625,
+            "exited": true
+        },
+        {
+            "deviceId": "def4222",
+            "name": "com.DefaultCompany.CubeSurfer",
+            "processId": 3200,
+            "exited": true
+        },
+        {
+            "deviceId": "def4222",
+            "name": "com.DefaultCompany.CubeSurfer",
+            "processId": 4306,
+            "exited": false
+        },
+        {
+            "deviceId": "def4222",
+            "name": "com.DefaultCompany.CubeSurfer",
+            "processId": 4603,
             "exited": false
         }
     ],
