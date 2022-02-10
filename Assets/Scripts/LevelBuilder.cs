@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class LevelBuilder : MonoBehaviour{
 
@@ -23,6 +21,12 @@ public class LevelBuilder : MonoBehaviour{
         for (int i = -1; i < numberOfTiles; i++) {
             Vector3 position = new Vector3(0.0f,0.0f, i * tileSize);
             GameObject tile = Instantiate(tilePrefab, position, Quaternion.identity, transform.GetChild(0));
+            LevelTile levelTile = tile.GetComponent<LevelTile>();
+            if (levelTile != null) {
+                levelTile.SetTileSpeed(tileSpeed);
+            } else {
+                Debug.Log("ERROR: unable to find level tile script in level tile");
+            }
         }
         
             
