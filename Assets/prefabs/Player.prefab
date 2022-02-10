@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9002232676634893296}
   - component: {fileID: 9002232676634893298}
   - component: {fileID: 9002232676634893299}
-  - component: {fileID: 5399540362551537267}
+  - component: {fileID: 6022756671804918329}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityMultiplier: 0.4
   sideLimit: 2
---- !u!114 &5399540362551537267
+--- !u!114 &6022756671804918329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3765d889848a7747b2e965a672cdccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubePrefab: {fileID: 1771344750198466571, guid: 06a749fe9d8ba89449654724902bc9ee,
+    type: 3}
