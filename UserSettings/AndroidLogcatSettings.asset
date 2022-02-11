@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "def4222",
         "name": "com.DefaultCompany.CubeSurfer",
-        "processId": 17970,
+        "processId": 24174,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -96,6 +96,18 @@
             "deviceId": "def4222",
             "name": "com.DefaultCompany.CubeSurfer",
             "processId": 17970,
+            "exited": false
+        },
+        {
+            "deviceId": "def4222",
+            "name": "com.DefaultCompany.CubeSurfer",
+            "processId": 22528,
+            "exited": false
+        },
+        {
+            "deviceId": "def4222",
+            "name": "com.DefaultCompany.CubeSurfer",
+            "processId": 24174,
             "exited": false
         }
     ],
