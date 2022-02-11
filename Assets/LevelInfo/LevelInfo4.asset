@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a0de8993f8aa4db87a11562d01cc2, type: 3}
+  m_Name: LevelInfo4
+  m_EditorClassIdentifier: 
+  tileList:
+  - _wallInfo: 0000000000000000000000000000000000000000
+    _pickUpPositions: []
+  - _wallInfo: 0100000002000000010000000100000001000000
+    _pickUpPositions:
+    - {x: 1, y: 0}
+    - {x: 0, y: 0}
+  - _wallInfo: 0200000001000000010000000300000002000000
+    _pickUpPositions:
+    - {x: 1, y: 0}
+    - {x: 0, y: 0}
+  - _wallInfo: 0300000001000000020000000200000001000000
+    _pickUpPositions:
+    - {x: 1, y: 0}
+    - {x: 1, y: 0}
+  - _wallInfo: 0100000001000000020000000300000003000000
+    _pickUpPositions:
+    - {x: 0, y: 1}
+  - _wallInfo: 0300000002000000030000000300000001000000
+    _pickUpPositions:
+    - {x: -2, y: 1}
+  tileSize: 10
+  levelSpeed: 5
+  destructionDistance: 10

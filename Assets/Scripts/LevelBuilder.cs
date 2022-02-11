@@ -16,7 +16,9 @@ public class LevelBuilder : MonoBehaviour {
     }
 
     private void Start() {
-        LevelInfo currentLevelInfo = GameManager.GM.GetCurrentLevelInfo();
+        
+
+        LevelInfo currentLevelInfo = GetLevelInfo();
         int i;
         for ( i = 0; i < currentLevelInfo.tileList.Length; i++) {
             Vector3 position = new Vector3(0.0f, 0.0f, i * currentLevelInfo.tileSize);
@@ -42,5 +44,9 @@ public class LevelBuilder : MonoBehaviour {
         } else {
             Debug.LogError("ERROR: Couldn't find moving tile script");
         }
+    }
+
+    protected  virtual LevelInfo GetLevelInfo() {
+        return GameManager.GM.GetCurrentLevelInfo();
     }
 }

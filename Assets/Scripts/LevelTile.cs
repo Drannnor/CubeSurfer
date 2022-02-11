@@ -35,5 +35,4 @@ public class LevelTile : MovingTile {
             Debug.LogError("ERROR: Couldn't find CubeWall script");
         }
     }
-
 }

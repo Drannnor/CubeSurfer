@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CubeWall : MonoBehaviour {
-    [SerializeField]private int[] _cubeWallInfo = { 1, 1, 1, 1, 2 };
+    [SerializeField] private int[] _cubeWallInfo = { 1, 1, 1, 1, 2 };
 
     [SerializeField] private GameObject obstacleCubePrefab;
     public bool isUsed;
@@ -11,24 +10,6 @@ public class CubeWall : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         isUsed = false;
-    }
-
-    public int GetWallHeight(Vector3 playerPosition) {
-        if (isUsed) return 0;
-        var discretePosition = playerPosition.x + 2.5f;//TODO fix magic numbers
-        var positionFloor = Mathf.FloorToInt(discretePosition);
-        var rest = discretePosition - positionFloor;
-
-        var offset = rest > 0.5f ? 1 : -1;
-        var OffSetIndex = Mathf.Clamp(positionFloor + offset, 0, 4);//TODO fix magic numbers
-        isUsed = true;
-        
-        var maxHeight = Math.Max(_cubeWallInfo[positionFloor], _cubeWallInfo[OffSetIndex]);
-        return maxHeight;
-    }
-
-    public void SetCubeWallInfo(int[] wallInfo) {
-        _cubeWallInfo = (int[])wallInfo.Clone();
     }
 
     public void Initiate() {
@@ -39,5 +20,23 @@ public class CubeWall : MonoBehaviour {
                 obstacleCube.transform.localPosition = offset;
             }
         }
+    }
+
+    public int GetWallHeight(Vector3 playerPosition) {
+        if (isUsed) return 0;
+        var discretePosition = playerPosition.x + 2.5f; //TODO fix magic numbers
+        var positionFloor = Mathf.FloorToInt(discretePosition);
+        var rest = discretePosition - positionFloor;
+
+        var offset = rest > 0.5f ? 1 : -1;
+        var offSetIndex = Mathf.Clamp(positionFloor + offset, 0, 4); //TODO fix magic numbers
+        isUsed = true;
+
+        var maxHeight = Math.Max(_cubeWallInfo[positionFloor], _cubeWallInfo[offSetIndex]);
+        return maxHeight;
+    }
+
+    public void SetCubeWallInfo(int[] wallInfo) {
+        _cubeWallInfo = (int[])wallInfo.Clone();
     }
 }

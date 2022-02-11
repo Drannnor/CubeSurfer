@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,10 @@ public class MainMenuController : MonoBehaviour {
     [SerializeField] private GameObject levelSelect;
     public void LoadLevel(string levelName) {
         SceneManager.LoadScene(levelName);
+    }
+
+    public void OnEnable() {
+        var index = GameManager.GM.GetCurrentLevelIndex();
     }
 
     public void Quit() {
@@ -21,5 +26,9 @@ public class MainMenuController : MonoBehaviour {
     public void GoBackToMenu() {
         mainMenu.SetActive(true);
         levelSelect.SetActive(false);
+    }
+
+    public void OpenLevel(int levelIndex) {
+        GameManager.GM.OpenLevel(levelIndex);
     }
 }

@@ -40,7 +40,15 @@ public class GameMenuController : MonoBehaviour {
 
     public void RetryLevel() {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
+    }
+    
+    public void NextLeve() {
+        Time.timeScale = 1;
+        
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
     }
 
     public void ShowVictoryScreen() {
