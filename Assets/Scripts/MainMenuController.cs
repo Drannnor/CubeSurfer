@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour {
     [SerializeField] private GameObject levelSelect;
     [SerializeField] private TMP_ColorGradient lockedGradient;
     [SerializeField] private TMP_ColorGradient unlockedGradient;
-    private const string LEVEL_BUTTON = "LevelButton";
+    private const string LevelButton = "LevelButton";
 
     public void LoadLevel(string levelName) {
         SceneManager.LoadScene(levelName);
@@ -16,11 +16,10 @@ public class MainMenuController : MonoBehaviour {
 
     private void ChangeLevelButtonColors() {
         var index = GameManager.GM.GetCurrentLevelIndex();
-        Debug.Log($"Index: {index}");
         var levelSelectMenu = levelSelect.transform;
         for (int i = 0; i < levelSelectMenu.childCount; i++) {
             var levelButton = levelSelectMenu.GetChild(i);
-            if (!levelButton.CompareTag(LEVEL_BUTTON)) return;
+            if (!levelButton.CompareTag(LevelButton)) return;
             var gradient = i <= index ? unlockedGradient : lockedGradient;
             ChangeGradient(levelButton, gradient);
         }
