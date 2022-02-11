@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &157905207 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3583378079458939084, guid: d9275d648a9aa134d9719fd82713ca27,
+    type: 3}
+  m_PrefabInstance: {fileID: 3583378079616803323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &243338636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,12 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23cac86e027ad14498f9268d92c1db14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &647926635 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3583378079120470672, guid: d9275d648a9aa134d9719fd82713ca27,
-    type: 3}
-  m_PrefabInstance: {fileID: 3583378079616803323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1038128593
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,12 +571,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1038128594}
-  m_Father: {fileID: 647926635}
-  m_RootOrder: 4
+  m_Father: {fileID: 157905207}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: 200}
+  m_AnchoredPosition: {x: 290, y: -890}
   m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324817145

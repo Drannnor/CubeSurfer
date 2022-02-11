@@ -48,7 +48,7 @@ public class CubeStacker : MonoBehaviour {
         _cubeCount -= amount;
 
         if (_cubeCount <= 0) {
-            SceneManager.LoadScene(1);
+            GameManager.GM.GetGameMenuController().ShowDeathScreen();
             return;
         }
 

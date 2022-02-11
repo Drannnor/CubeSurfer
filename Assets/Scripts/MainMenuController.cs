@@ -1,9 +1,7 @@
-using System.Resources;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
-public class MenuController : MonoBehaviour {
+public class MainMenuController : MonoBehaviour {
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject levelSelect;
