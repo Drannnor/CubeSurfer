@@ -8,10 +8,6 @@ public class CubePickUp : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         isUsed = false;
-        //TODO spawn more stacked cubes
-        // for (int i = 0; i < _numberOfCubes; i++) {
-        //     //TODO
-        // }
     }
 
 
@@ -24,7 +20,6 @@ public class CubePickUp : MonoBehaviour {
             stacker.AddCube(_numberOfCubes);
             isUsed = true;
             Destroy(gameObject);
-            //TODO destroy all cubes of this stack;
         } else {
             Debug.Log("ERROR: Unable to access CubeStacker script from player");
         }

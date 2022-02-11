@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -28,6 +29,12 @@ public class GameManager : MonoBehaviour{
         } else {
             _currentLevelIndex = 0;
             PlayerPrefs.SetInt(MAX_LEVEL_INDEX, _currentLevelIndex);
+        }
+    }
+
+    private void Start() {
+        if (resetProgress) {
+            PlayerPrefs.DeleteAll();
         }
     }
 

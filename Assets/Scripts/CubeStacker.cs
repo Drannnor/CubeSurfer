@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CubeStacker : MonoBehaviour {
     [SerializeField] private GameObject cubePrefab;
@@ -7,13 +7,18 @@ public class CubeStacker : MonoBehaviour {
     private int _cubeCount;
 
     private Transform _firstCube;
-    private static float _initialOffset = 1.5f;
+    private static float _initialOffset = 0.5f;
+
+    public delegate void OnAddCube ();
+    public OnAddCube onAddCube;
+    
+    public delegate void OnRemoveCube ();
+    public OnRemoveCube onRemoveCube;
 
     private void Start() {
         _cubeCount = 1;
         transform.Translate(Vector3.up);
         GameObject cube = Instantiate(cubePrefab, transform, false);
-        _initialOffset = 1.5f;
         var cubeOffset = Vector3.down * _initialOffset;
         cube.transform.localPosition += cubeOffset;
         _firstCube = cube.transform;
@@ -42,6 +47,7 @@ public class CubeStacker : MonoBehaviour {
 
             _firstCube = cube.transform;
         }
+        onAddCube();
     }
 
     public void SubtractCubes(int amount, Transform obstacle) {
@@ -59,6 +65,7 @@ public class CubeStacker : MonoBehaviour {
 
         //prune;
         cubeToCut.parent = obstacle;
+        onRemoveCube();
     }
 
     /*

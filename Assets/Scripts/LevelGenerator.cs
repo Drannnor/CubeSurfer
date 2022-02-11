@@ -50,7 +50,7 @@ public class LevelGenerator : LevelBuilder {
     private int[] GenerateCubeWallInfo() {
         int[] result = new int[5];
     
-        int openingPosition = Random.Range(0, 5);   
+        int openingPosition = Random.Range(0, 4);   
         var doorwayHeight = Random.Range(1, _maxNumberOfCubes);
         _maxNumberOfCubes -= doorwayHeight;
         Debug.Log($"doorway height: {doorwayHeight}, maxNumberOfCubes: {_maxNumberOfCubes}");

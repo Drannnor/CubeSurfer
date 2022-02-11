@@ -3811,6 +3811,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916720034}
   m_CullTransparentMesh: 1
+--- !u!1 &2043181735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6525156620307675285, guid: bbc64031723d9d44cb771050eee8d651,
+    type: 3}
+  m_PrefabInstance: {fileID: 6525156620426745316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2043181736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043181735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80898a29fe514e64b92501bf324963a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: -0.009433746
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  duration: 0.2
 --- !u!1001 &3667457342675030517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3925,7 +3969,7 @@ MonoBehaviour:
     type: 3}
   finishPrefab: {fileID: 9085814106980380988, guid: 7c959f4deadda1f43a30b29971288dbe,
     type: 3}
-  newLevel: {fileID: 11400000, guid: 3c6a6ecaccd93054bab25366e8fd7e1d, type: 2}
+  newLevel: {fileID: 11400000, guid: 1db3b11da7ddcc34cb738c3afe1c816c, type: 2}
   minNumberOfTiles: 9
   maxNumberOfTiles: 15
   destructionDistance: 10

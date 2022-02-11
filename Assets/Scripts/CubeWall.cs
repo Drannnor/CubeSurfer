@@ -6,6 +6,7 @@ public class CubeWall : MonoBehaviour {
 
     [SerializeField] private GameObject obstacleCubePrefab;
     public bool isUsed;
+    private float _centerOfSet;
 
     // Start is called before the first frame update
     void Start() {
@@ -24,12 +25,15 @@ public class CubeWall : MonoBehaviour {
 
     public int GetWallHeight(Vector3 playerPosition) {
         if (isUsed) return 0;
-        var discretePosition = playerPosition.x + 2.5f; //TODO fix magic numbers
+
+        _centerOfSet = 2.5f;
+        var discretePosition = playerPosition.x + _centerOfSet;
         var positionFloor = Mathf.FloorToInt(discretePosition);
         var rest = discretePosition - positionFloor;
 
-        var offset = rest > 0.5f ? 1 : -1;
-        var offSetIndex = Mathf.Clamp(positionFloor + offset, 0, 4); //TODO fix magic numbers
+        var offset = rest > 0.5f ? -1 : 1;
+        var maxIndex = 4;
+        var offSetIndex = Mathf.Clamp(positionFloor + offset, 0, maxIndex); 
         isUsed = true;
 
         var maxHeight = Math.Max(_cubeWallInfo[positionFloor], _cubeWallInfo[offSetIndex]);
