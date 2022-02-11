@@ -1,7 +1,12 @@
+using System.Resources;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MenuController : MonoBehaviour {
+
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject levelSelect;
     public void LoadLevel(string levelName) {
         SceneManager.LoadScene(levelName);
     }
@@ -11,6 +16,12 @@ public class MenuController : MonoBehaviour {
     }
     
     public void OpenLevelSelection() {
-        //TODO
+        mainMenu.SetActive(false);
+        levelSelect.SetActive(true);
+    }
+    
+    public void GoBackToMenu() {
+        mainMenu.SetActive(true);
+        levelSelect.SetActive(false);
     }
 }
