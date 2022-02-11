@@ -44,7 +44,7 @@ public class GameMenuController : MonoBehaviour {
         SceneManager.LoadScene(scene.name);
     }
     
-    public void NextLeve() {
+    public void NextLevel() {
         Time.timeScale = 1;
         
         Scene scene = SceneManager.GetActiveScene(); 

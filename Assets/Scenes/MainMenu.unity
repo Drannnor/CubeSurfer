@@ -483,6 +483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9157955705825549624, guid: 2dd0222e5dcca974486ecfb5d7e9074c,
+        type: 3}
+      propertyPath: resetProgress
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9157955705825549625, guid: 2dd0222e5dcca974486ecfb5d7e9074c,
         type: 3}
       propertyPath: m_RootOrder

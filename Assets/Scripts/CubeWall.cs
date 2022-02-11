@@ -31,8 +31,8 @@ public class CubeWall : MonoBehaviour {
         var positionFloor = Mathf.FloorToInt(discretePosition);
         var rest = discretePosition - positionFloor;
 
-        var offset = rest > 0.5f ? -1 : 1;
-        var maxIndex = 4;
+        var offset = rest > 0.5f ? 1 : -1;
+        const int maxIndex = 4;
         var offSetIndex = Mathf.Clamp(positionFloor + offset, 0, maxIndex); 
         isUsed = true;
 

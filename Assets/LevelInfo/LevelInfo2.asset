@@ -13,25 +13,43 @@ MonoBehaviour:
   m_Name: LevelInfo2
   m_EditorClassIdentifier: 
   tileList:
-  - _wallInfo: 
+  - _wallInfo: 0000000000000000000000000000000000000000
     _pickUpPositions: []
-  - _wallInfo: 0100000001000000010000000200000002000000
+  - _wallInfo: 0200000002000000010000000200000002000000
+    _pickUpPositions:
+    - {x: 0, y: -2}
+    - {x: -1, y: 0}
+  - _wallInfo: 0300000002000000020000000100000001000000
+    _pickUpPositions:
+    - {x: -2, y: -2}
+  - _wallInfo: 0200000003000000020000000200000001000000
+    _pickUpPositions:
+    - {x: -1, y: -1}
+    - {x: -1, y: 1}
+  - _wallInfo: 0100000001000000030000000300000003000000
+    _pickUpPositions:
+    - {x: -1, y: -1}
+  - _wallInfo: 0300000003000000010000000100000002000000
+    _pickUpPositions:
+    - {x: -1, y: 1}
+  - _wallInfo: 0100000001000000010000000300000002000000
     _pickUpPositions:
     - {x: 1, y: -2}
-  - _wallInfo: 0200000002000000010000000100000001000000
+  - _wallInfo: 0100000001000000030000000100000001000000
     _pickUpPositions:
-    - {x: -2, y: 0}
-  - _wallInfo: 0200000002000000020000000300000003000000
+    - {x: 0, y: 0}
+  - _wallInfo: 0100000001000000010000000300000003000000
     _pickUpPositions:
-    - {x: -1.5, y: -2.8}
-    - {x: -1, y: 1}
-  - _wallInfo: 0100000001000000020000000200000003000000
+    - {x: 0, y: 0}
+    - {x: -2, y: 1}
+  - _wallInfo: 0200000001000000020000000300000003000000
     _pickUpPositions:
-    - {x: 2, y: -1}
-  - _wallInfo: 0400000002000000020000000200000004000000
+    - {x: -1, y: -2}
+    - {x: 1, y: 1}
+  - _wallInfo: 0100000001000000020000000300000003000000
     _pickUpPositions:
-    - {x: 1.2, y: -1.2}
-    - {x: -1.5, y: 1.2}
+    - {x: 0, y: -1}
+    - {x: 1.3, y: 1}
   tileSize: 10
   levelSpeed: 5
   destructionDistance: 10

@@ -41,7 +41,6 @@ public class LevelGenerator : LevelBuilder {
             _maxNumberOfCubes++;
             pickupPositions[i] = new Vector2(Random.Range(-2, 2), Random.Range(-2, 2));
         }
-        Debug.Log($"max cubes  {_maxNumberOfCubes} pickups");
 
 
         return pickupPositions;
@@ -53,7 +52,6 @@ public class LevelGenerator : LevelBuilder {
         int openingPosition = Random.Range(0, 4);   
         var doorwayHeight = Random.Range(1, _maxNumberOfCubes);
         _maxNumberOfCubes -= doorwayHeight;
-        Debug.Log($"doorway height: {doorwayHeight}, maxNumberOfCubes: {_maxNumberOfCubes}");
         for (int i = 0; i < 5; i++) {
             if (i == openingPosition || i == (openingPosition + 1)) {
                 result[i] = doorwayHeight;

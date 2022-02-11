@@ -34,7 +34,7 @@ MonoBehaviour:
     _pickUpPositions:
     - {x: 1, y: 0}
     - {x: -1, y: -2}
-  - _wallInfo: 0100000002000000010000000100000004000000
+  - _wallInfo: 0100000002000000020000000100000004000000
     _pickUpPositions:
     - {x: -2, y: -2}
     - {x: -1, y: -2}
