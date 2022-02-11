@@ -48,8 +48,7 @@ public class CubeStacker : MonoBehaviour {
         _cubeCount -= amount;
 
         if (_cubeCount <= 0) {
-            //TODO handle death
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             return;
         }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
@@ -38,6 +36,7 @@ public class PlayerMovement : MonoBehaviour{
                 float distanceToCharacter = Vector3.Distance(_camera.transform.position, Vector3.zero);
                 // var point = _camera.View(new Vector3(touch.position.x, touch.position.y, _camera.nearClipPlane));
                 // Debug.DrawLine(Vector3.zero, point, Color.red);
+                //TODO clean movment
                 
                 
                 

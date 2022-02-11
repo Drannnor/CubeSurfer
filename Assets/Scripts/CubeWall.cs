@@ -30,7 +30,6 @@ public class CubeWall : MonoBehaviour {
         var OffSetIndex = Mathf.Clamp(positionFloor + offset, 0, 4);//TODO fix magic numbers
         isUsed = true;
         
-        Debug.Log($"discrete position: {discretePosition}, position floor: {positionFloor}, offsetIndex: {OffSetIndex}");
         var maxHeight = Math.Max(_cubeWallInfo[positionFloor], _cubeWallInfo[OffSetIndex]);
         return maxHeight;
     }
