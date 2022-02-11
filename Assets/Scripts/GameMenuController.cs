@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class GameMenuController : MonoBehaviour {
     [SerializeField] private GameObject pauseScreen;
@@ -43,5 +41,11 @@ public class GameMenuController : MonoBehaviour {
     public void RetryLevel() {
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
+    }
+
+    public void ShowVictoryScreen() {
+        pauseScreen.SetActive(false);
+        victoryScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }

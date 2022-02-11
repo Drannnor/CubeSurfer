@@ -20,4 +20,8 @@ public class GameManager : MonoBehaviour{
     public GameMenuController GetGameMenuController() {
         return _gameMenuController;
     }
+
+    public void LevelFinished() {
+        _gameMenuController.ShowVictoryScreen();
+    }
 }
