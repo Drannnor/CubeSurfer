@@ -11,13 +11,6 @@ public class CubeWall : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         isUsed = false;
-        for (var x = 0; x < _cubeWallInfo.Length; x++) {
-            for (var y = 0; y < _cubeWallInfo[x]; y++) {
-                var obstacleCube = Instantiate(obstacleCubePrefab, transform, false);
-                var offset = new Vector3(x, y, 0.0f);
-                obstacleCube.transform.localPosition = offset;
-            }
-        }
     }
 
     public int GetWallHeight(Vector3 playerPosition) {
@@ -32,5 +25,19 @@ public class CubeWall : MonoBehaviour {
         
         var maxHeight = Math.Max(_cubeWallInfo[positionFloor], _cubeWallInfo[OffSetIndex]);
         return maxHeight;
+    }
+
+    public void SetCubeWallInfo(int[] wallInfo) {
+        _cubeWallInfo = (int[])wallInfo.Clone();
+    }
+
+    public void Initiate() {
+        for (var x = 0; x < _cubeWallInfo.Length; x++) {
+            for (var y = 0; y < _cubeWallInfo[x]; y++) {
+                var obstacleCube = Instantiate(obstacleCubePrefab, transform, false);
+                var offset = new Vector3(x, y, 0.0f);
+                obstacleCube.transform.localPosition = offset;
+            }
+        }
     }
 }

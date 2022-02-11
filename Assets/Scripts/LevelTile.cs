@@ -1,24 +1,39 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTile : MonoBehaviour {
-    private float _tileSpeed = 5.0f;
-    [SerializeField] private bool move = true;
+public class LevelTile : MovingTile {
+   
+    [SerializeField] private GameObject cubeWallPrefab;
+    [SerializeField] private GameObject cubePickUpPrefab;
+    [SerializeField] private Vector3 wallOffset = new Vector3(-2.0f, 1.0f, 4.5f);
 
-    // Update is called once per frame
-    private void Update() {
-        if (!move) return;
-        transform.Translate(Vector3.back * (_tileSpeed * Time.deltaTime));
+    
+    public void Initiate(float levelSpeed, float destructionDistance, int[] wallInfo, Vector2[] pickupInfo) {
+        
+        SetLevelSpeed(levelSpeed);
+        SetDestructionDistance(destructionDistance);
+        CreateWall(wallInfo);
+        SpawnPickUps(pickupInfo);
+    }
 
-        if (transform.position.z <= -10) {
-            foreach (Transform child in transform) {
-                Destroy(child.gameObject);
-            }
-
-            Destroy(gameObject);
+    private void SpawnPickUps(IEnumerable<Vector2> pickupInfo) {
+        foreach (var position in pickupInfo) {
+            var pickUpObject = Instantiate(cubePickUpPrefab, transform, false);
+            pickUpObject.transform.localPosition = new Vector3(position.x, 1.0f, position.y);
         }
     }
 
-    public void SetTileSpeed(float speed) {
-        _tileSpeed = speed;
+    private void CreateWall(int[] wallInfo) {
+        var wallObject = Instantiate(cubeWallPrefab, transform, false);
+        wallObject.transform.localPosition = wallOffset;
+
+        CubeWall cubeWall = wallObject.GetComponent<CubeWall>();
+        if (cubeWall != null) {
+            cubeWall.SetCubeWallInfo(wallInfo);
+            cubeWall.Initiate();
+        } else {
+            Debug.LogError("ERROR: Couldn't find CubeWall script");
+        }
     }
+
 }

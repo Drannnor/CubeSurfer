@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class LevelBuilder : MonoBehaviour{
-
-    [SerializeField] private int numberOfTiles = 5;
-    [SerializeField] private int tileSize = 10;
-    [SerializeField] private float tileSpeed = 2.0f;
+public class LevelBuilder : MonoBehaviour {
     [SerializeField] private GameObject tilePrefab;
+    [SerializeField] private GameObject finishPrefab;
+
 
     private Transform _level;
 
-    private void Awake(){
+    private void Awake() {
         _level = transform.GetChild(0);
 
         if (_level == null) {
@@ -17,23 +15,32 @@ public class LevelBuilder : MonoBehaviour{
         }
     }
 
-    private void Start(){
-        for (int i = -1; i < numberOfTiles; i++) {
-            Vector3 position = new Vector3(0.0f,0.0f, i * tileSize);
-            GameObject tile = Instantiate(tilePrefab, position, Quaternion.identity, transform.GetChild(0));
+    private void Start() {
+        LevelInfo currentLevelInfo = GameManager.GM.GetCurrentLevelInfo();
+        int i;
+        for ( i = 0; i < currentLevelInfo.tileList.Length; i++) {
+            Vector3 position = new Vector3(0.0f, 0.0f, i * currentLevelInfo.tileSize);
+            var tileInfo = currentLevelInfo.tileList[i];
+            GameObject tile = Instantiate(tilePrefab, position, Quaternion.identity);
             LevelTile levelTile = tile.GetComponent<LevelTile>();
             if (levelTile != null) {
-                levelTile.SetTileSpeed(tileSpeed);
+                levelTile.SetLevelSpeed(currentLevelInfo.levelSpeed);
+                levelTile.SetDestructionDistance(currentLevelInfo.destructionDistance);
+                levelTile.Initiate(currentLevelInfo.levelSpeed, currentLevelInfo.destructionDistance,
+                    tileInfo.GetWallInfo(), tileInfo.GetPickUpInfo());
             } else {
                 Debug.Log("ERROR: unable to find level tile script in level tile");
             }
         }
-        
-            
-    }
-
-    // Update is called once per frame
-    void Update(){
-        _level.transform.Translate(new Vector3(0.0f, 0.0f, -tileSpeed * Time.deltaTime));
+        //instantiate finish
+        Vector3 finishPosition = new Vector3(0.0f, 0.0f, i * currentLevelInfo.tileSize);
+        GameObject finish = Instantiate(finishPrefab, finishPosition, Quaternion.identity);
+        var movingTile = finish.GetComponent<MovingTile>();
+        if (movingTile != null) {
+            movingTile.SetDestructionDistance(currentLevelInfo.destructionDistance);
+            movingTile.SetLevelSpeed(currentLevelInfo.levelSpeed);
+        } else {
+            Debug.LogError("ERROR: Couldn't find moving tile script");
+        }
     }
 }
