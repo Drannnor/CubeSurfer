@@ -3925,7 +3925,7 @@ MonoBehaviour:
     type: 3}
   finishPrefab: {fileID: 9085814106980380988, guid: 7c959f4deadda1f43a30b29971288dbe,
     type: 3}
-  newLevel: {fileID: 11400000, guid: 1ee99f402d6ffbc4fb3982454643db91, type: 2}
+  newLevel: {fileID: 11400000, guid: 3c6a6ecaccd93054bab25366e8fd7e1d, type: 2}
   minNumberOfTiles: 9
   maxNumberOfTiles: 15
   destructionDistance: 10
